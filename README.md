@@ -7,3 +7,8 @@
 [Tracking](https://github.com/wayne0git/cv/blob/master/tracker.py)
 - Centroid distance based
 - Need object detection result   
+---
+[Panorama Stitch](https://github.com/wayne0git/cv/blob/master/opencv_panorama_stitch.ipynb)
+- Based on Opencv
+- SIFT feature detector / descriptor
+- Estimate homography matrix using RANSAC 
