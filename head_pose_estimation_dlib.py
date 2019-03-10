@@ -57,14 +57,6 @@ line_pairs = [[0, 1], [1, 2], [2, 3], [3, 0],
               [4, 5], [5, 6], [6, 7], [7, 4],
               [0, 4], [1, 5], [2, 6], [3, 7]]
 
-def euler2pry(euler):
-    pitch, yaw, roll = [math.radians(x) for x in euler]
-    pitch = -math.degrees(math.asin(math.sin(pitch)))
-    roll = -math.degrees(math.asin(math.sin(roll)))
-    yaw = math.degrees(math.asin(math.sin(yaw)))
-
-    return pitch, roll, yaw
-
 def get_head_pose(shape):
     # Extract points for pose estimation
     image_pts = np.float32([shape[idx] for idx in pts_idx_pose])
@@ -73,9 +65,9 @@ def get_head_pose(shape):
     _, rotation_vec, translation_vec = cv2.solvePnP(object_pts, image_pts, cam_matrix, dist_coeffs)
 
     # Calculate euler angle
-    rotation_mat, _ = cv2.Rodrigues(rotation_vec)
+    rotation_mat, _ = cv2.Rodrigues(rotation_vec)   # (3, 1) -> (3, 3)
     pose_mat = cv2.hconcat((rotation_mat, translation_vec))
-    _, _, _, _, _, _, euler_angle = cv2.decomposeProjectionMatrix(pose_mat)
+    _, _, _, _, _, _, euler_angle = cv2.decomposeProjectionMatrix(pose_mat) # (3, 1)
 
     # Project simulated cube for pose visualization
     reprojectdst, _ = cv2.projectPoints(reprojectsrc, rotation_vec, translation_vec, cam_matrix, dist_coeffs)
@@ -128,7 +120,7 @@ def main():
 
                 # Draw head pose estimation result
                 if i == 0:
-                    pitch, roll, yaw = euler2pry(euler_angle)
+                    pitch, yaw, roll = euler_angle
                     for start, end in line_pairs:
                         cv2.line(frame, reprojectdst[start], reprojectdst[end], (0, 0, 255))
     
