@@ -1,6 +1,9 @@
 # ML / CV example code in Python
 
 ---
+[Object Detection](https://github.com/wayne0git/ml_cv_basics/tree/master/object_detection)
+- See https://github.com/wayne0git/ml_cv_basics/blob/master/object_detection/README.md for detail
+---
 [Facial Landmark Detection](https://github.com/wayne0git/ml_cv_basics/tree/master/face_landmark_detection)
 - AR Filter based on Mediapipe's landmark detection (https://github.com/wayne0git/ml_cv_basics/blob/master/face_landmark_detection/face_ar_filter_mediapipe.py)
 ---
