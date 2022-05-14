@@ -9,7 +9,7 @@
 - https://github.com/wayne0git/ml_cv_basics/blob/master/object_detection/selective_search_example.ipynb
 
 ## YOLO
-### YOLOv1
+### YOLOv1 / YOLOv2
 - https://github.com/wayne0git/ml_cv_basics/blob/master/object_detection/yolo_v1_example.ipynb (Inference)
 ### YOLOv5
 - https://github.com/wayne0git/ml_cv_basics/blob/master/object_detection/yolo_v5_example_opencv.ipynb (Inference)
