@@ -13,5 +13,5 @@ pip3 install -r requirements.txt
 ### Usage
 
 ```bash
-python3 main.py
+python3 gesture_control_mp.py
 ```
